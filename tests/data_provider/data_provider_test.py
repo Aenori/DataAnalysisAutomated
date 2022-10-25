@@ -5,6 +5,6 @@ class DataProviderTest:
     def __enter__(self):
         return self.file_name
 
-    def __exit__(self):
+    def __exit__(self,  type_, value, tb):
         pass
         

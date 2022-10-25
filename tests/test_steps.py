@@ -1,3 +1,5 @@
+import pandas as pd
+
 from .helper import TEST_DATA_PATH
 from src.read_zip_file import read_zip_file
 from src.steps import clean_data
@@ -14,5 +16,10 @@ def test_clean_data():
     assert(not df_co2_cleaned.isnull().values.any())
     assert ('World' not in read_zip_file_output[0]['Country Name'].values)
 
-    df_co2_cleaned.to_csv('tests/data/co2_cleaned.csv')
+    df_co2_cleaned.reset_index(inplace=True, drop=True)
+
+    assert((df_co2_cleaned == pd.read_csv('tests/data/co2_cleaned.csv')).all(axis=None))
+
+
+
 

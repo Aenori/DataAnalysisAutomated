@@ -9,22 +9,16 @@
   <body>
     <div class="container">
       <noscript>You need to enable JavaScript to run this app.</noscript>
-      <h1 style="text-align:center;">Serious game</h1>
-      <table class="table table-striped">
-        <tr>
-          <!-- # Nom de l'actif, subscription, cout de subscription, cout fixe, exploit 1, exploit 2, exploit 3, exploit 4 -->
-          <th scope="col">Nom</th>
-          <th scope="col">Début</th>
-          <th scope="col">Fin</th>
-        </tr>
-        {% for session in session_list %}
-          <tr>
-            <td><a href="session/{{ session.id }}">{{ session.name }}</a></td>
-            <td>{{ session.start_time }}</td>
-            <td>{{ session.end_time }}</td>
-          </tr>
-        {% endfor %}
-      </table>
+      <h1 style="text-align:center;">World CO2 emission</h1>
+      <p>Data last updated at : {{ last_updated_at }}
+      <h2>World biggest emitters</h2>
+      {{ dashboard_1 }}
+      <h2>CO2 histogram</h2>
+      <img src="graph_1.png">
+      <h2>World best improvments</h2>
+      {{ dashboard_2 }}
+      <h2>World CO2 per capita mean</h2>
+      <img src="graph_2.png">
     </div>
   </body>
 </html>

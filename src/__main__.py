@@ -1,4 +1,0 @@
-from .world_bank_api_data_provider import WorldBankApiDataProvider
-from .create_report import create_report
-
-create_report(WorldBankApiDataProvider())

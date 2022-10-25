@@ -11,6 +11,5 @@ COPY requirements.txt ./
 RUN pip install -r requirements.txt 2>/dev/null
 COPY . .
 
-EXPOSE 5000
-CMD ["python", "application.py"]
+CMD ["python", "main.py"]
 

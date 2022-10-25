@@ -1,12 +1,13 @@
 import matplotlib.pyplot as plt
 
+# NRO : the . of .read_zip_file means we are looking for a file in the
+#  same folder
 from .read_zip_file import read_zip_file
-from .steps import clean_data, construct_dashboards, write_graphs, write_html_report
+from .steps import clean_data, write_graphs, write_html_report
 
 STEPS = [
     read_zip_file,
     clean_data,
-    construct_dashboards,
     write_graphs,
     write_html_report
 ]

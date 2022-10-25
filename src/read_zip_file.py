@@ -11,13 +11,13 @@ def read_zip_file(zip_file_path):
 
     for text_file in zip_file.infolist():
         if text_file.filename.startswith('API_EN.ATM.CO2E'):
-            df_api = pd.read_csv(zip_file.open(text_file.filename), header=4)
+            df_co2 = pd.read_csv(zip_file.open(text_file.filename), header=2)
             last_updated_at = extract_last_updated_at(text_file, zip_file)
 
         elif text_file.filename.startswith('Metadata_Country_'):
-            df_country_meta_data = pd.read_csv(zip_file.open(text_file.filename))
+            df_country_meta_data = pd.read_csv(zip_file.open(text_file.filename), index_col=0)
 
-    return df_api, df_country_meta_data, last_updated_at
+    return df_co2, df_country_meta_data, last_updated_at
 
 
 def extract_last_updated_at(text_file, zip_file):
